@@ -1,9 +1,9 @@
 import { Movies } from '../models/movies';
-import { MoviesFilter } from '../components/movies/movies-filter'
+import { MoviesFilter } from '../components/movies/movies-filter';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-
+import {config} from '../common/config'
 @Injectable()
 export class MoviesService {
     
@@ -13,8 +13,8 @@ export class MoviesService {
     moviesList: Movies[] = [];
   
     findById(id: string): Observable<Movies> {
-        let url = 'http://192.168.0.208:3000/api/Movies'; 
-        let params = { "movieName": id };
+        let url = config.apiUrl+'Movies'; 
+        let params = { "id": id };
         let headers = new HttpHeaders()
                             .set('Accept', 'application/json');
         return this.http.get<Movies>(url, {params, headers});
@@ -32,19 +32,19 @@ export class MoviesService {
     }
 
     find(filter: MoviesFilter): Observable<Movies[]> {
-        let url = 'http://192.168.0.208:3000/api/Movies';
+        let url = 'http://34.245.129.208:3000/api/Movies';
         let headers = new HttpHeaders()
                             .set('Accept', 'application/json');
 
         let params = {
-            "filter":encodeURIComponent(`{"where":{"movieName": "${filter.movieName}"}}`)
+            "filter":`{"movieName": ${filter.movieName}}`
         };
 
-        return this.http.get<Movies[]>(url, { params, headers});
+        return this.http.get<Movies[]>(url, {params, headers});
     }
 
     save(entity: Movies): Observable<Movies> {
-        let url = 'http://192.168.0.208:3000/api/Movies';
+        let url = 'http://34.245.129.208:3000/api/Movies';
         let headers = new HttpHeaders()
             .set('Accept', 'application/json');
         return this.http.post<Movies>(url, entity, {headers});

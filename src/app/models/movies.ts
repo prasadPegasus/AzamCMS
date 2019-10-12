@@ -1,4 +1,5 @@
 export class Movies {
+    id: string;
     movieName: string;
     movieUrl: string;
     publishedDate: Date;
