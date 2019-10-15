@@ -4,22 +4,33 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http';
 
 import { MoviesService} from './services/movies.service';
-import { MoviesModule } from './components/movies/movies.module'
+import { MoviesModule } from './components/movies/movies.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MaterialModule } from './modules/app-material.module';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { DashboardComponent } from './components/homepage/dashboard/dashboard.component';
+import { CategoriesModule } from './components/homepage/categories/categories.module';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
-  ],
+    LoginComponent,
+    HomepageComponent,
+    DashboardComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    MoviesModule
+    MoviesModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    CategoriesModule,
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]

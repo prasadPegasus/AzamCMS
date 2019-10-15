@@ -3,7 +3,7 @@ import { MoviesFilter } from '../components/movies/movies-filter';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import {config} from '../common/config'
+import { apiDetails} from '../../environments/environment'
 @Injectable()
 export class MoviesService {
     
@@ -13,7 +13,7 @@ export class MoviesService {
     moviesList: Movies[] = [];
   
     findById(id: string): Observable<Movies> {
-        let url = config.apiUrl+'Movies'; 
+        let url = apiDetails.baseURL+'Movies'; 
         let params = { "id": id };
         let headers = new HttpHeaders()
                             .set('Accept', 'application/json');
