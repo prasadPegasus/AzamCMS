@@ -1,5 +1,5 @@
 import { Movies } from '../models/movies';
-import { MoviesFilter } from '../components/movies/movies-filter';
+import { MoviesFilter } from '../components/movie/movies-filter';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';

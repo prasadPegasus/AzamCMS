@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http';
 
 import { MoviesService} from './services/movies.service';
-import { MoviesModule } from './components/movies/movies.module';
+import { MoviesModule } from './components/movie/movies.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './modules/app-material.module';
 import { HomepageComponent } from './components/homepage/homepage.component';
