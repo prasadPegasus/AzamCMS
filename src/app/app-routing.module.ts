@@ -17,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: "movies",
-        loadChildren: "./components/movies/movies.module#MoviesModule"
+        loadChildren: "./components/movie/movies.module#MoviesModule"
       },
       {
         path: "categories",
